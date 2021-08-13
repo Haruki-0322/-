@@ -1,0 +1,408 @@
+header{
+  background-image: url(./header-kaizi.jpg);
+  background-repeat: repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  height: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.header-upper{
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 120px;
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 2px 2px rgb(59, 58, 58), 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+.nav{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 85px;
+  text-align: center;
+}
+
+
+
+div{
+  width: 100%;
+}
+
+.button {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  padding: 15px;
+  display: flex;
+  display: inline-block;
+  /* transition: .3s;
+  -webkit-transform: scale(1);
+  transform: scale(1); */
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  /* カーソルを離した際のアニメーションの速度調整 */
+  transition:.2s all;
+  font-family: 'New Tegomin', serif;
+}
+
+/* .button:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+} */
+
+.nav:hover .button{
+  /* ナビゲーションをマウスオーバーした際のアニメーションの動きを指定 */
+  filter:blur(3px);
+  /* 全てのボタンがぼやける */
+  opacity:.8;
+  /* 全てのボタンを通常サイズに指定 */
+  transform: scale(1);
+}
+.nav:hover .button:hover{
+  /* 速度 */
+  transition: .6s;
+  /* ボタンを少し拡大 */
+  transform:scale(1.1);
+  /* 要素がぼやけない */
+  filter:blur(0px);
+  opacity:1;
+  /* 上下のボーダーの色を濃くする */
+  border-top: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+}
+.nav:hover .button:hover > p {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .button{
+    font-size: 18px;
+  }
+}
+
+/* 歴史の中の画像 */
+.slider-fade {
+  position: relative;
+}
+
+.slider-fade > li {
+  position: absolute;
+  list-style: none;
+  visibility: hidden;
+  animation: anime_slider_fade 20s 0s infinite;
+}
+.slider-fade > li:nth-of-type(2) {
+  animation-delay: 4s;
+}
+.slider-fade > li:nth-of-type(3) {
+  animation-delay: 8s;
+}
+.slider-fade > li:nth-of-type(4) {
+  animation-delay: 12s;
+}
+.slider-fade > li:nth-of-type(5) {
+  animation-delay: 16s;
+}
+.slider-fade > li:nth-of-type(6) {
+  animation-delay: 20s;
+}
+
+@keyframes anime_slider_fade {
+  0% {
+      visibility: visible;
+      opacity: 0;
+  }
+  10% {
+      opacity: 1;
+  }
+  20% {
+      opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.slider-fade > li > img{
+  height: 467px;
+  width: 700px;
+  border-radius: 50px;
+}
+
+
+/* 歴史の中の画像 */
+
+.upper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 500px;
+}
+
+.list{
+  text-align: left;
+  display: inline-block;
+}
+
+.contents{
+  display: inline-block;
+  text-align: center;
+}
+
+.slider-fade{
+  text-align: center;
+  width: 100vh;
+  margin-right: 210px;
+}
+
+/* ↓タイトル */
+.header-upper, h1{
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(97, 48, 48, 0.5);
+
+/* Clip Background Image */
+
+    background: url(https://7themes.su/_ph/37/851560135.jpg?1609781556) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+/* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 10s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+
+    }
+
+/* Animate Background Image */
+
+    @-webkit-keyframes aitf {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+/* ↑タイトル */
+
+body{
+  height: 2000px;
+}
+
+h1{
+  text-align: center;
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px black;
+  border-radius: 3px 0 3px 0;
+  font-size: 50px;
+  margin: 10px;
+  width: 400px;
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 3px black;
+  border-radius: 50%;
+}
+
+h1:after {
+  top:-12px;
+  left:-12px;
+}
+h1:before {
+  bottom:-12px;
+  right:-12px;
+}
+
+h1{
+  margin: 19px 700px 19px 0;
+}
+
+/* 名場面↓ */
+.scene{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie{
+  text-align: center;
+}
+
+/* マップ↓ */
+.map{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* shop↓ */
+.item > img{
+  height: 400px;
+  width: 400px;
+  padding: 36px;
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+}
+
+.explanation{
+  display: flex;
+  justify-content: center;
+}
+
+.explanation > p{
+  text-align: center;
+  padding: 0 116px;
+}
+
+#interview{
+  height: 600px;
+}
+
+.interview > img{
+  height: 400px;
+  padding: 20px;
+  margin-right: 9px;
+}
+
+.interview{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.interview > p{
+  margin-left: 0px;
+  padding: 4px;
+  font-size: 19px;
+  font-family: 'Noto Serif JP', serif;
+}
+
+section{
+  margin:2em 0;
+  position: relative;
+  padding: 0.5em 1.5em;
+  border-top: solid 3px black;
+  border-bottom: solid 3px black;
+
+}
+section:before, section:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 3px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: black;
+}
+section:before {left: 40px;}
+section:after {right: 40px;}
+section p {
+  margin: 0; 
+  padding: 0;
+}
+
+html { scroll-behavior: smooth;}
+
+section{
+  margin: 50px;
+}
+
+/* contentsの詳細 */
+.slider-fade{
+  padding: 19px;
+}
+
+.list{
+  color: white;
+  font-size: 21px;
+  font-family: 'Noto Serif JP', serif;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: -webkit-repeating-linear-gradient(-45deg, #5e6061, #4e4f50 3px,#555657 3px, #6d6e6e 7px);
+  background: repeating-linear-gradient(-45deg, #5b5c5c, #4c4d4e 3px,#8b8c8d 3px, #8d8e8f 7px);
+}
+
+.list>li{
+  padding: 5px;
+}
+
+body{
+  background-color: gray;
+	background-image:
+	 radial-gradient(#757474 3px, transparent 3px);
+	background-size: 60px 30px;
+}
+
+iframe{
+  margin-bottom: 100px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.slider-fade>li{
+  margin-left: 170px;
+}
+
+.map>h2{
+  margin-top: 30px;
+  font-family: 'Noto Serif JP', serif;
+}
+.map>iframe{
+  margin-top: 0;
+  padding-top: 5px;
+}
+
+.explanation>p{
+  font-family: 'Anton', sans-serif;
+  margin: 0 10px;
+  padding-bottom: 30px;
+}
+
+footer{
+  width: 100%;
+  height: 100px;
+  background-color: #3e4131;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+ul.footer-menu li {
+display: inline;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.header-bottom{
+  padding-top: 60px;
+}
